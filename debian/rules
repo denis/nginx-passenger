@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-include /usr/share/dpatch/dpatch.make
-
 CFLAGS = -Wall -g
 
 DEB_BUILD_ARCH ?=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
@@ -14,6 +12,8 @@ ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 else
 	CFLAGS += -O2
 endif
+
+include /usr/share/dpatch/dpatch.make
 
 config.status: patch-stamp
 	dh_testdir
@@ -37,11 +37,11 @@ endif
 	    --with-http_ssl_module \
 	    --with-http_dav_module \
 	    --with-http_gzip_static_module \
-	    --with-mail \
-	    --with-mail_ssl_module \
+        --with-mail \
+        --with-mail_ssl_module \
 	    --with-ipv6 \
-	    --add-module=$(CURDIR)/modules/nginx-upstream-fair \
-            $(CONFIGURE_OPTS)
+        --add-module=$(CURDIR)/modules/nginx-upstream-fair \
+        $(CONFIGURE_OPTS)
 
 build: config.status
 	$(MAKE) build
@@ -53,7 +53,7 @@ build-stamp:
 clean: unpatch
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp
+	rm -f build-stamp 
 	[ ! -f Makefile ] || $(MAKE) clean
 
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
@@ -62,14 +62,16 @@ endif
 ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 		rm -f config.guess
 endif
-	dh_clean
+	dh_clean 
 
 install:
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_clean -k 
 	dh_installdirs
 	dh_install
+	
+	install -m644 debian/nginx.ufw.profile debian/nginx/etc/ufw/applications.d/nginx
 
 binary-indep:
 
@@ -93,4 +95,4 @@ binary-arch: install
 
 binary: binary-indep binary-arch
 
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: build clean binary-indep binary-arch binary install 

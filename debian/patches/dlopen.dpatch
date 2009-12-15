@@ -1,7 +1,8 @@
-#!/bin/sh /usr/share/dpatch/dpatch-run
-## dlopen.dpatch by Fabio Tranchitella <kobold@debian.org>
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 99-unnamed.dpatch by Fabio Tranchitella <kobold@debian.org>
 ##
-## DP: Patch to remove the unnecesssary link to libdl. (#540599)
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
 
 @DPATCH@
 diff -urN nginx-0.7.62/auto/os/features nginx-0.7.62.debian/auto/os/features

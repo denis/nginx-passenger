@@ -1,47 +1,47 @@
 .TH "nginx" "1" "" "" ""
 .SH "NAME"
 nginx \- small, but very powerful and efficient web server
+.br 
+
+.br 
 .SH "SYNOPSIS"
-\fBnginx\fR [\fIoptions\fR] <\fIconfiguration file\fR>
+\fBnginx\fR [options] <configuration file>
+.br 
+
+.br 
 .SH "DESCRIPTION"
-.PP
-\fBnginx\fR is a server that can be used as standalone HTTP server and as
-a reverse proxy server before some Apache or another big server to reduce
+\fBnginx\fR is a server that can be used as standalone HTTP server and as 
+a reverse proxy server before some Apache or another big server to reduce 
 load to backend servers by many concurrent HTTP\-sessions.
+.br 
+
+.br 
 .SH "OPTIONS"
-.TP
 A summary of options is included below:
-.TP
-\fB\-?\fR,\fB\-h\fR
-Show this help.
-.TP
-\fB\-v\fR
-Show version and exit.
-.TP
-\fB\-V\fR
-Show version and configure options then exit.
-.TP
-\fB\-s\fR \fIsignal\fR
-Send signal to a master process: stop, quit, reopen, reload.
-.TP
-\fB\-p\fR \fIprefix\fR
-Set prefix path.
-.TP
-\fB\-g\fR \fIdirectives\fR
-Set global directives out of configuration file.
-.TP
-\fB\-c\fR <\fIconfiguration file\fR>
+.br 
+
+.br 
+\fB\-c\fR <configuration file>
 Specifies a particular configuration file for nginx to load.
-.TP
+.br 
+\fB\-v\fR
+Show version of program.
+.br 
 \fB\-t\fR
-Tests nginx configuration and exit.
-.TP
-.SH "SEE ALSO"
-Website: <http://nginx.net/>
-.TP
+Tests nginx configuration
+.br 
+.br 
+
+.br 
+You can find further information about this webserver in http://nginx.net/docs_en.txt.
+.br 
+
+.br 
 .SH "AUTHORS"
-\fBnginx\fR was written by Igor Sysoev <igor@sysoev.ru>.
-.TP
-This manual page was written by Jose Parrella <joseparrella@cantv.net> and
-Kartik Mistry <kartik@debian.org>, for the Debian project (but may be used
-by others).
+\fBnginx\fR was written by Igor Sysoev.
+.br 
+
+.br 
+This manual page was written by Jose Parrella <joseparrella@cantv.net>,
+for the Debian project (but may be used by others).
+
